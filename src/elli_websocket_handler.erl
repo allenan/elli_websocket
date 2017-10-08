@@ -29,11 +29,12 @@
     {shutdown, Headers :: elli:headers()}.
 
 
--callback websocket_handle(Req :: elli:req(), Message :: elli_websocket:message(), State :: any()) ->
-    {reply, ReplyMessage :: elli_websocket:message(), State}.
+-callback websocket_handle(_Req :: elli:req(), _Message :: elli_websocket:message(), _State :: any()) ->
+    %% {reply, ReplyMessage :: elli_websocket:message(), State}.
+    ok.
 
--callback websocket_info(Req :: elli:req(), Message :: any(), State :: any()) ->
+-callback websocket_info(_Req :: elli:req(), _Message :: any(), _State :: any()) ->
     {ok, ReplyState :: any()}.
 
--callback websocket_handle_event(Event :: elli_websocket:event(), Args :: list(), State :: any()) -> 
+-callback websocket_handle_event(_Event :: elli_websocket:event(), _Args :: list(), _State :: any()) -> 
     ok.
